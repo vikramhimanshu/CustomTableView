@@ -7,21 +7,75 @@
 //
 
 #import "ViewController.h"
+#import "GDTableViewCell.h"
+#import "GDTableView.h"
 
-@interface ViewController ()
+@interface ViewController () <GDTableViewDataSource, GDTableViewDelegate>
+
+@property (nonatomic, retain) NSArray* tableRows;
+@property (nonatomic, retain) GDTableView *tableView;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = @"GDTableView";
+
+    NSURL* fileURL = [[NSBundle mainBundle] URLForResource:@"TableViewData"
+                                             withExtension:@"plist"];
+    self.tableRows = [NSArray arrayWithContentsOfURL:fileURL];
+
+    self.tableView = (GDTableView*)self.view;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    self.tableView.backgroundColor = [UIColor grayColor];
+    [self.tableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - PGTableView dataSource and delegate methods
+
+-(NSInteger)numberOfRowsInTableView:(GDTableView *)tableView
+{
+    return [self.tableRows count];
+}
+
+-(CGFloat)tableView:(GDTableView *)tableView heightForRow:(NSInteger)row
+{
+    NSString *text = [self.tableRows objectAtIndex: row];
+    return CGRectGetHeight([self rectForString:text]);
+}
+
+-(GDTableViewCell *)tableView:(GDTableView *)tableView cellForRow:(NSInteger)row
+{
+    NSString *text = [self.tableRows objectAtIndex: row];
+    GDTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell)
+    {
+        cell = [[GDTableViewCell alloc] initWithReuseIdentifier:@"cell"];
+        UILabel *lbl = [[UILabel alloc] initWithFrame:[self rectForString:text]];
+        lbl.numberOfLines = 0;
+        lbl.text = text;
+        lbl.font = [UIFont systemFontOfSize:12];
+        [cell addSubview:lbl];
+    }
+    return cell;
+}
+
+- (CGRect)rectForString:(NSString *)string
+{
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
+    
+    CGRect lblRect = [string boundingRectWithSize:CGSizeMake(320, CGFLOAT_MAX)
+                                                 options:NSStringDrawingUsesLineFragmentOrigin
+                                              attributes:attributes
+                                                 context:nil];
+    return lblRect;
 }
 
 @end

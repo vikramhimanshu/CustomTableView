@@ -14,6 +14,10 @@
 		A3D57FB91A8B1A7C00B6CB6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D57FB81A8B1A7C00B6CB6D /* Images.xcassets */; };
 		A3D57FBC1A8B1A7C00B6CB6D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D57FBA1A8B1A7C00B6CB6D /* LaunchScreen.xib */; };
 		A3D57FC81A8B1A7C00B6CB6D /* CustomTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D57FC71A8B1A7C00B6CB6D /* CustomTableViewTests.m */; };
+		A3D57FD31A8B1AD900B6CB6D /* GDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D57FD21A8B1AD900B6CB6D /* GDTableView.m */; };
+		A3D57FD71A8B1C8E00B6CB6D /* GDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D57FD61A8B1C8E00B6CB6D /* GDTableViewCell.m */; };
+		A3D57FDA1A8B3AE400B6CB6D /* GDTableViewCellInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D57FD91A8B3AE400B6CB6D /* GDTableViewCellInternal.m */; };
+		A3D843361A8C692800C2EFE4 /* TableViewData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3D843351A8C692800C2EFE4 /* TableViewData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,13 @@
 		A3D57FC11A8B1A7C00B6CB6D /* CustomTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D57FC61A8B1A7C00B6CB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D57FC71A8B1A7C00B6CB6D /* CustomTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewTests.m; sourceTree = "<group>"; };
+		A3D57FD11A8B1AD900B6CB6D /* GDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableView.h; sourceTree = "<group>"; };
+		A3D57FD21A8B1AD900B6CB6D /* GDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableView.m; sourceTree = "<group>"; };
+		A3D57FD51A8B1C8E00B6CB6D /* GDTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableViewCell.h; sourceTree = "<group>"; };
+		A3D57FD61A8B1C8E00B6CB6D /* GDTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableViewCell.m; sourceTree = "<group>"; };
+		A3D57FD81A8B3AE400B6CB6D /* GDTableViewCellInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTableViewCellInternal.h; sourceTree = "<group>"; };
+		A3D57FD91A8B3AE400B6CB6D /* GDTableViewCellInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDTableViewCellInternal.m; sourceTree = "<group>"; };
+		A3D843351A8C692800C2EFE4 /* TableViewData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TableViewData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,7 @@
 		A3D57FAA1A8B1A7C00B6CB6D /* CustomTableView */ = {
 			isa = PBXGroup;
 			children = (
+				A3D57FD41A8B1ADF00B6CB6D /* TableView */,
 				A3D57FAF1A8B1A7C00B6CB6D /* AppDelegate.h */,
 				A3D57FB01A8B1A7C00B6CB6D /* AppDelegate.m */,
 				A3D57FB21A8B1A7C00B6CB6D /* ViewController.h */,
@@ -98,6 +110,7 @@
 			children = (
 				A3D57FAC1A8B1A7C00B6CB6D /* Info.plist */,
 				A3D57FAD1A8B1A7C00B6CB6D /* main.m */,
+				A3D843351A8C692800C2EFE4 /* TableViewData.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +130,19 @@
 				A3D57FC61A8B1A7C00B6CB6D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3D57FD41A8B1ADF00B6CB6D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A3D57FD11A8B1AD900B6CB6D /* GDTableView.h */,
+				A3D57FD21A8B1AD900B6CB6D /* GDTableView.m */,
+				A3D57FD51A8B1C8E00B6CB6D /* GDTableViewCell.h */,
+				A3D57FD61A8B1C8E00B6CB6D /* GDTableViewCell.m */,
+				A3D57FD81A8B3AE400B6CB6D /* GDTableViewCellInternal.h */,
+				A3D57FD91A8B3AE400B6CB6D /* GDTableViewCellInternal.m */,
+			);
+			name = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +227,7 @@
 			files = (
 				A3D57FB71A8B1A7C00B6CB6D /* Main.storyboard in Resources */,
 				A3D57FBC1A8B1A7C00B6CB6D /* LaunchScreen.xib in Resources */,
+				A3D843361A8C692800C2EFE4 /* TableViewData.plist in Resources */,
 				A3D57FB91A8B1A7C00B6CB6D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +248,9 @@
 			files = (
 				A3D57FB41A8B1A7C00B6CB6D /* ViewController.m in Sources */,
 				A3D57FB11A8B1A7C00B6CB6D /* AppDelegate.m in Sources */,
+				A3D57FD71A8B1C8E00B6CB6D /* GDTableViewCell.m in Sources */,
+				A3D57FD31A8B1AD900B6CB6D /* GDTableView.m in Sources */,
+				A3D57FDA1A8B3AE400B6CB6D /* GDTableViewCellInternal.m in Sources */,
 				A3D57FAE1A8B1A7C00B6CB6D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +442,7 @@
 				A3D57FCD1A8B1A7C00B6CB6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3D57FCE1A8B1A7C00B6CB6D /* Build configuration list for PBXNativeTarget "CustomTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +451,7 @@
 				A3D57FD01A8B1A7C00B6CB6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
